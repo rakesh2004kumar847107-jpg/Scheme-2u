@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scheme-2u.webscheme.workers.dev/sitemap.xml
