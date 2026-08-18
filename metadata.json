@@ -1,0 +1,6 @@
+{
+  "name": "Scheme 2 U",
+  "description": "Scheme 2 U - India's trusted portal for latest Government Jobs, Sarkari Schemes, Admit Cards, Results, Scholarships, and Bihar & Central education updates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', 'Mukta', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+  }
+
+  html.dark {
+    background-color: #020617;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dark body {
+    background-color: #020617;
+    color: #f8fafc;
+  }
+
+  /* When Hindi is active, use Mukta as primary font */
+  html[lang="hi"] {
+    font-family: 'Mukta', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom marquee animation for breaking ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar for modern cards */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.7);
+}
+
+/* Print Styles for Admit Cards & Details */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
