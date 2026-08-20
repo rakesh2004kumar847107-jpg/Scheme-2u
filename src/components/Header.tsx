@@ -45,7 +45,8 @@ export const Header: React.FC = () => {
     setIsSearchModalOpen,
     setIsAgeCalcOpen,
     setIsSchemeFinderOpen,
-    activeView
+    activeView,
+    isAdminAuthenticated
   } = useApp();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -383,11 +384,15 @@ export const Header: React.FC = () => {
             <button
               id="admin-manager-btn"
               onClick={navigateToAdmin}
-              className="hidden sm:flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors"
-              title="Post Admin / Manage Posts"
+              className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-xs cursor-pointer ${
+                isAdminAuthenticated
+                  ? 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:text-blue-600 border border-slate-200 dark:border-slate-700'
+              }`}
+              title={isAdminAuthenticated ? "Admin Dashboard (Logged In)" : "Admin Login / Post Manager"}
             >
-              <PlusCircle className="w-3.5 h-3.5" />
-              <span>{isHindi ? 'पोस्ट एडमिन' : 'Add Post'}</span>
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>{isAdminAuthenticated ? (isHindi ? 'एडमिन पैनल' : 'Admin Panel') : (isHindi ? 'एडमिन लॉगिन' : 'Admin Login')}</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -455,10 +460,14 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => { navigateToAdmin(); setIsMobileMenuOpen(false); }}
-              className="flex-1 py-2 px-3 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center justify-center gap-1.5"
+              className={`flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 ${
+                isAdminAuthenticated
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200'
+              }`}
             >
-              <PlusCircle className="w-3.5 h-3.5" />
-              <span>{isHindi ? 'पोस्ट एडमिन' : 'Add Post'}</span>
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>{isAdminAuthenticated ? (isHindi ? 'एडमिन पैनल' : 'Admin Panel') : (isHindi ? 'एडमिन लॉगिन' : 'Admin Login')}</span>
             </button>
           </div>
 
