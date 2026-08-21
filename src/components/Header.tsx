@@ -177,10 +177,11 @@ export const Header: React.FC = () => {
             <button
               id="brand-logo-btn"
               onClick={navigateToHome}
-              className="flex items-center gap-2.5 group text-left focus:outline-hidden"
+              className="flex items-center gap-2.5 group text-left focus:outline-hidden cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-indigo-800 text-white flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">
-                <span className="tracking-tighter">S2U</span>
+              <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-600 to-indigo-900 text-white flex items-center justify-center font-black text-xl shadow-[0_6px_14px_rgba(37,99,235,0.4),0_2px_4px_rgba(0,0,0,0.1),inset_0_2px_2px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.35)] group-hover:scale-105 group-hover:-translate-y-0.5 transition-all">
+                <div className="absolute inset-x-1.5 top-1 h-3 bg-gradient-to-b from-white/40 to-transparent rounded-t-xl pointer-events-none" />
+                <span className="tracking-tighter drop-shadow-[0_2px_3px_rgba(0,0,0,0.3)] relative z-10">S2U</span>
               </div>
               <div>
                 <div className="flex items-center gap-1.5">

@@ -78,7 +78,7 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const LOCAL_STORAGE_KEY_POSTS = 'scheme2u_custom_posts_v4_2026';
+const LOCAL_STORAGE_KEY_POSTS = 'scheme2u_custom_posts_v6_2026';
 const LOCAL_STORAGE_KEY_SOURCES = 'scheme2u_sources_registry_v1';
 const LOCAL_STORAGE_KEY_LANG = 'scheme2u_lang';
 const LOCAL_STORAGE_KEY_THEME = 'scheme2u_theme';

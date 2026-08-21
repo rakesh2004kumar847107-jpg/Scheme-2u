@@ -1,6 +1,10 @@
 import { PostItem } from '../types';
+import { LATEST_UPDATES_POSTS } from './latestUpdatesPosts';
+import { LATEST_JOBS_POSTS } from './latestJobsPosts';
+import { YOJANA_SCHEMES_POSTS } from './yojanaSchemesPosts';
+import { ADMIT_CARDS_RESULTS_POSTS } from './admitCardsResultsPosts';
 
-export const INITIAL_POSTS: PostItem[] = [
+const BASE_POSTS: PostItem[] = [
   // 1. BPSC 71st CCE 2026 (Updated Existing Article)
   {
     id: 'bpsc-71st-cce-2026',
@@ -1690,3 +1694,22 @@ export const INITIAL_POSTS: PostItem[] = [
     seoKeywords: ['bihar ugmac counselling 2026', 'bceceboard bihar gov in neet', 'bihar mbbs cutoff 2026', 'pmch patna admission status']
   }
 ];
+
+// Combine all sets ensuring unique IDs with latest posts prioritized
+const allPostsList = [
+  ...LATEST_UPDATES_POSTS,
+  ...LATEST_JOBS_POSTS,
+  ...YOJANA_SCHEMES_POSTS,
+  ...ADMIT_CARDS_RESULTS_POSTS,
+  ...BASE_POSTS
+];
+
+const postMap = new Map<string, PostItem>();
+for (const p of allPostsList) {
+  if (!postMap.has(p.id)) {
+    postMap.set(p.id, p);
+  }
+}
+
+export const INITIAL_POSTS: PostItem[] = Array.from(postMap.values());
+

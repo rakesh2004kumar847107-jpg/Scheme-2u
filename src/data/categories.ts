@@ -121,6 +121,17 @@ export const CATEGORIES: CategoryInfo[] = [
     badgeText: 'text-emerald-600 dark:text-emerald-400',
     descriptionEn: 'Caste, Income, Domicile, Ration Card, Aadhaar, Voter ID & PAN Online',
     descriptionHi: 'जाति, आय, निवास, राशन कार्ड, आधार सुधार और ऑनलाइन पोर्टल सेवाएं'
+  },
+  {
+    id: 'admission',
+    labelEn: 'Admissions',
+    labelHi: 'प्रवेश (Admission 2026)',
+    icon: 'GraduationCap',
+    color: 'amber',
+    badgeBg: 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800',
+    badgeText: 'text-amber-600 dark:text-amber-400',
+    descriptionEn: 'UG/PG, Polytechnic, Paramedical, DElEd, B.Ed, NVS, SAV & Board Admissions',
+    descriptionHi: 'यूजी/पीजी, पॉलिटेक्निक, पैरामेडिकल, डीएलएड, बीएड, नवोदय व बोर्ड एडमिशन'
   }
 ];
 

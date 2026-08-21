@@ -160,9 +160,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 1: Latest Govt Jobs */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center">
-                    <Briefcase className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-700 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(37,99,235,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <Briefcase className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'नवीनतम सरकारी नौकरी (Latest Jobs 2026)' : 'Latest Government Jobs 2026'}
@@ -187,9 +188,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 2: Admit Cards & Exam Intimations */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 flex items-center justify-center">
-                    <FileText className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(245,158,11,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <FileText className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'प्रवेश पत्र (Admit Cards 2026)' : 'Admit Cards & Hall Tickets 2026'}
@@ -217,9 +219,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 3: Govt Schemes & Welfare */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 flex items-center justify-center">
-                    <Landmark className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-700 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(20,184,166,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <Landmark className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'सरकारी योजनाएं (Govt Schemes 2026)' : 'Government Welfare Schemes 2026'}
@@ -244,9 +247,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 4: Scholarships & Direct Benefits */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300 flex items-center justify-center">
-                    <GraduationCap className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-800 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(99,102,241,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <GraduationCap className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'छात्रवृत्ति व प्रोत्साहन (Scholarships 2026)' : 'Scholarships & Student Grants 2026'}
@@ -274,9 +278,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 5: Bihar Special Section */}
             <div className="bg-gradient-to-br from-rose-50/50 via-white to-orange-50/40 dark:from-slate-900 dark:via-slate-900 dark:to-rose-950/20 border-2 border-rose-200 dark:border-rose-900/60 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-rose-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-rose-600 text-white flex items-center justify-center">
-                    <Compass className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-rose-500 to-red-700 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(225,29,72,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <Compass className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'बिहार विशेष 2026 (BPSC, CSBC, BSEB, PMS)' : 'Bihar Government Portal 2026'}
@@ -301,9 +306,10 @@ export const TabbedHomeGrid: React.FC = () => {
             {/* Box 6: Examination Results */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center">
-                    <Award className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-700 text-white flex items-center justify-center shadow-[0_4px_12px_rgba(16,185,129,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                    <div className="absolute inset-x-1 top-0.5 h-2.5 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg pointer-events-none" />
+                    <Award className="w-4 h-4 drop-shadow-xs" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
                     {isHindi ? 'परीक्षा परिणाम व स्कोरकार्ड (Results 2026)' : 'Results & Scorecards 2026'}

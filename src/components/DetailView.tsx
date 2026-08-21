@@ -22,17 +22,32 @@ import {
   AlertTriangle,
   ChevronDown,
   ChevronUp,
-  FileCheck
+  FileCheck,
+  Edit3,
+  Lock,
+  Shield
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { getCategoryById } from '../data/categories';
 import { VerificationStatus, ComputedStatus } from '../types';
+import { AdminPostEditModal } from './AdminPostEditModal';
 
 export const DetailView: React.FC = () => {
-  const { activeView, navigateToHome, navigateToCategory, posts, language, isBookmarked, toggleBookmark, showToast } = useApp();
+  const { 
+    activeView, 
+    navigateToHome, 
+    navigateToCategory, 
+    posts, 
+    language, 
+    isBookmarked, 
+    toggleBookmark, 
+    showToast,
+    isAdminAuthenticated 
+  } = useApp();
   const isHindi = language === 'hi';
 
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [isAdminEditOpen, setIsAdminEditOpen] = useState(false);
 
   if (activeView.type !== 'detail' && activeView.type !== 'post') {
     return null;
@@ -114,6 +129,24 @@ export const DetailView: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Admin Edit Post Button */}
+          <button
+            onClick={() => setIsAdminEditOpen(true)}
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border font-bold text-xs shadow-xs transition-colors cursor-pointer ${
+              isAdminAuthenticated
+                ? 'bg-amber-500 hover:bg-amber-600 text-white border-amber-600'
+                : 'bg-slate-100 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-950/60 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-amber-400 hover:text-amber-700 dark:hover:text-amber-400'
+            }`}
+            title={isAdminAuthenticated ? 'Admin: Edit this post' : 'Admin only: Login to edit post'}
+          >
+            {isAdminAuthenticated ? <Edit3 className="w-3.5 h-3.5" /> : <Lock className="w-3.5 h-3.5" />}
+            <span>
+              {isAdminAuthenticated 
+                ? (isHindi ? 'पोस्ट एडिट करें (एडमिन)' : 'Edit Post (Admin)') 
+                : (isHindi ? 'एडमिन एडिट' : 'Admin Edit')}
+            </span>
+          </button>
+
           <button
             onClick={handleShare}
             className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold transition-colors cursor-pointer"
@@ -600,6 +633,13 @@ export const DetailView: React.FC = () => {
           </div>
         </section>
       )}
+
+      {/* Admin Post Edit Modal (Protected: Admin Only) */}
+      <AdminPostEditModal
+        post={post}
+        isOpen={isAdminEditOpen}
+        onClose={() => setIsAdminEditOpen(false)}
+      />
     </article>
   );
 };

@@ -39,70 +39,86 @@ export const HeroSearch: React.FC = () => {
     setActiveView({ type: 'search', query: tag });
   };
 
-  const categoriesList: { id: CategoryType; labelEn: string; labelHi: string; icon: any; color: string; count: number }[] = [
+  const categoriesList: { 
+    id: CategoryType; 
+    labelEn: string; 
+    labelHi: string; 
+    icon: any; 
+    gradient: string;
+    glowShadow: string;
+    ringColor: string;
+  }[] = [
     { 
       id: 'jobs', 
       labelEn: 'Govt Jobs', 
       labelHi: 'सरकारी नौकरी', 
       icon: Briefcase, 
-      color: 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800',
-      count: posts.filter(p => p.category === 'jobs').length 
+      gradient: 'from-blue-400 via-blue-600 to-indigo-700',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(37,99,235,0.42),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-blue-400 dark:hover:border-blue-400'
     },
     { 
       id: 'admit-card', 
       labelEn: 'Admit Card', 
       labelHi: 'एडमिट कार्ड', 
       icon: FileText, 
-      color: 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800',
-      count: posts.filter(p => p.category === 'admit-card').length 
+      gradient: 'from-amber-400 via-amber-500 to-orange-600',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(245,158,11,0.45),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-amber-400 dark:hover:border-amber-400'
     },
     { 
       id: 'results', 
       labelEn: 'Results', 
       labelHi: 'रिजल्ट', 
       icon: Award, 
-      color: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800',
-      count: posts.filter(p => p.category === 'results').length 
+      gradient: 'from-emerald-400 via-emerald-500 to-teal-700',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(16,185,129,0.42),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-emerald-400 dark:hover:border-emerald-400'
     },
     { 
       id: 'schemes', 
       labelEn: 'Govt Schemes', 
       labelHi: 'सरकारी योजनाएं', 
       icon: Landmark, 
-      color: 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950 dark:text-teal-300 dark:border-teal-800',
-      count: posts.filter(p => p.category === 'schemes').length 
+      gradient: 'from-teal-400 via-teal-600 to-cyan-800',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(20,184,166,0.42),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-teal-400 dark:hover:border-teal-400'
     },
     { 
       id: 'scholarships', 
       labelEn: 'Scholarships', 
       labelHi: 'छात्रवृत्ति', 
       icon: GraduationCap, 
-      color: 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:border-indigo-800',
-      count: posts.filter(p => p.category === 'scholarships').length 
+      gradient: 'from-violet-400 via-indigo-600 to-purple-800',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(124,58,237,0.42),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-indigo-400 dark:hover:border-indigo-400'
     },
     { 
       id: 'bihar', 
       labelEn: 'Bihar Special', 
       labelHi: 'बिहार विशेष', 
       icon: Compass, 
-      color: 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950 dark:text-rose-300 dark:border-rose-800',
-      count: posts.filter(p => p.stateScope === 'Bihar').length 
+      gradient: 'from-rose-400 via-rose-600 to-red-700',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(225,29,72,0.45),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-rose-400 dark:hover:border-rose-400'
     },
     { 
       id: 'services', 
       labelEn: 'Online Services', 
       labelHi: 'ऑनलाइन सेवाएं', 
       icon: Cpu, 
-      color: 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:border-sky-800',
-      count: posts.filter(p => p.category === 'services').length 
+      gradient: 'from-sky-400 via-blue-500 to-cyan-700',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(14,165,233,0.45),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-sky-400 dark:hover:border-sky-400'
     },
     { 
       id: 'answer-key', 
       labelEn: 'Answer Key', 
       labelHi: 'उत्तर कुंजी', 
       icon: CheckSquare, 
-      color: 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800',
-      count: posts.filter(p => p.category === 'answer-key').length 
+      gradient: 'from-fuchsia-400 via-purple-600 to-pink-700',
+      glowShadow: 'shadow-[0_8px_18px_-2px_rgba(217,70,239,0.42),0_2px_6px_rgba(0,0,0,0.12),inset_0_2px_2px_rgba(255,255,255,0.65),inset_0_-2px_4px_rgba(0,0,0,0.35)]',
+      ringColor: 'hover:border-purple-400 dark:hover:border-purple-400'
     }
   ];
 
@@ -181,7 +197,7 @@ export const HeroSearch: React.FC = () => {
           ))}
         </div>
 
-        {/* Compact Category Action Cards Grid */}
+        {/* Attractive 3D Category/Service Action Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 pt-1">
           {categoriesList.map((cat) => {
             const Icon = cat.icon;
@@ -190,16 +206,21 @@ export const HeroSearch: React.FC = () => {
                 key={cat.id}
                 id={`cat-card-${cat.id}`}
                 onClick={() => navigateToCategory(cat.id)}
-                className="group relative flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-sm transition-all text-center cursor-pointer"
+                className={`group relative flex flex-col items-center justify-center py-3 px-2 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 ${cat.ringColor} hover:shadow-md dark:hover:shadow-slate-900/60 transition-all duration-300 text-center cursor-pointer`}
               >
-                <div className={`w-8 h-8 rounded-lg ${cat.color} border flex items-center justify-center mb-1.5 group-hover:scale-105 transition-transform`}>
-                  <Icon className="w-4 h-4" />
+                {/* 3D Elevated Icon Box */}
+                <div className={`relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br ${cat.gradient} ${cat.glowShadow} flex items-center justify-center mb-2 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 transform-gpu`}>
+                  {/* Top 3D Specular Light Sheen */}
+                  <div className="absolute inset-x-1.5 top-1 h-3.5 sm:h-4 bg-gradient-to-b from-white/50 to-transparent rounded-t-xl pointer-events-none" />
+                  {/* Inner Rim Light */}
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/30 pointer-events-none" />
+                  {/* 3D Solid Icon */}
+                  <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)] relative z-10 transition-transform duration-300 group-hover:scale-105" />
                 </div>
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 line-clamp-1">
+
+                {/* Category Label */}
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 line-clamp-1 transition-colors">
                   {isHindi ? cat.labelHi : cat.labelEn}
-                </span>
-                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400">
-                  {cat.count} {isHindi ? 'अपडेट्स' : 'Updates'}
                 </span>
               </button>
             );
